@@ -1,0 +1,13 @@
+{
+  "hints": [],
+  "groups": [],
+  "properties": [
+    {
+      "sourceType": "com.why.captcha.configuration.CaptchaGlobalConfig",
+      "name": "captcha.global.type",
+      "description": "验证码类型",
+      "type": "com.why.captcha.enums.CaptchaType"
+    }
+
+  ]
+}
