@@ -7,6 +7,36 @@
       "name": "captcha.global.type",
       "description": "验证码类型",
       "type": "com.why.captcha.enums.CaptchaType"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.default.width",
+      "description": "普通验证码宽度",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.default.height",
+      "description": "普通验证码高度",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.default.randomLength",
+      "description": "普通验证码位数",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.default.mathCaptchaMaxNumber",
+      "description": "数值验证码最大取值",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.default.mathCaptchaMinNumber",
+      "description": "数值验证码最小取值",
+      "type": "java.lang.Integer"
     }
 
   ]

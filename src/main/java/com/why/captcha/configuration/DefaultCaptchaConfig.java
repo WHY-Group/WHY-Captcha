@@ -1,5 +1,6 @@
 package com.why.captcha.configuration;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -11,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
  * @company WHY-Group
  */
 @Configuration
+@ConfigurationProperties(
+        prefix = "captcha.default"
+)
 public class DefaultCaptchaConfig {
     /**
      * 验证码图片宽度
