@@ -1,8 +1,8 @@
 package com.why.captcha.producer.impl;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
 import com.why.captcha.listener.CreateImageListener;
 import com.why.captcha.producer.Producer;
+import com.why.captcha.producer.RandomProducer;
 import com.why.captcha.utils.RandomResult;
 
 import java.awt.image.BufferedImage;
@@ -17,8 +17,18 @@ import java.awt.image.BufferedImage;
  */
 public class DefaultProducer implements Producer {
 
-    private DefaultRandomProducer defaultRandomProducer;
+    private RandomProducer defaultRandomProducer;
 
+
+    @Override
+    public RandomProducer getRandomProducer() {
+        return this.defaultRandomProducer;
+    }
+
+    @Override
+    public void setRandomProducer(RandomProducer randomProducer) {
+        this.defaultRandomProducer = randomProducer;
+    }
 
     @Override
     public BufferedImage createImage(CreateImageListener listener) {
@@ -40,24 +50,10 @@ public class DefaultProducer implements Producer {
      * @author W
      * @date: 2021/12/21
      */
+    @Override
     public String getRandomStr() {
         RandomResult randomResult = defaultRandomProducer.create();
         return randomResult.getRandomStr();
     }
 
-
-    public void setDefaultRandomProducer(DefaultRandomProducer defaultRandomProducer) {
-        this.defaultRandomProducer = defaultRandomProducer;
-    }
-
-    public static void main(String[] args) {
-        RandomResult randomResult = new RandomResult();
-
-        DefaultProducer defaultProducer = new DefaultProducer();
-        defaultProducer.setDefaultRandomProducer(new DefaultRandomProducer(new DefaultCaptchaConfig()));
-        defaultProducer.createImage(randomResult::setRandomStr);
-
-        System.out.println(randomResult.getRandomStr());
-
-    }
 }

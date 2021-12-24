@@ -22,6 +22,7 @@ public enum CaptchaType {
      */
     private final String type;
 
+
     CaptchaType(String type) {
         this.type = type;
     }
@@ -29,4 +30,5 @@ public enum CaptchaType {
     public String getType() {
         return type;
     }
+
 }

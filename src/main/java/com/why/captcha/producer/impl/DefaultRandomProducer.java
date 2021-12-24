@@ -19,21 +19,24 @@ public class DefaultRandomProducer extends RandomProducer {
     /**
      * 随机类型
      */
-    private final RandomType randomType;
+    private  RandomType randomType;
     /**
      * 普通验证码的配置类
      */
-    private final DefaultCaptchaConfig config;
+    private DefaultCaptchaConfig config;
 
     /**
      * 数学方法中的加、减、乘、除运算符
      */
     private static final char[] MATH_BASIC_OPERATOR = {'+', '-', '*', '/'};
 
+    public DefaultRandomProducer() {
+
+    }
 
     public DefaultRandomProducer(DefaultCaptchaConfig config) {
-        this.randomType = config.getRandomType();
         this.config = config;
+        this.randomType = config.getRandomType();
     }
 
     @Override
@@ -56,6 +59,17 @@ public class DefaultRandomProducer extends RandomProducer {
                 throw new IllegalArgumentException("Random type does not meet the requirements");
         }
         return result;
+    }
+
+    @Override
+    public DefaultCaptchaConfig getCaptchaConfig() {
+        return this.config;
+    }
+
+    @Override
+    public void setCaptchaConfig(DefaultCaptchaConfig config) {
+        this.config = config;
+        this.randomType = config.getRandomType();
     }
 
     /**

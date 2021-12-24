@@ -21,7 +21,7 @@ public class DefaultCaptchaConfig {
     /**
      * 全局配置验证码的类型
      */
-    private CaptchaType type;
+    private CaptchaType captchaType = CaptchaType.DEFAULT;
 
     /**
      * 验证码图片宽度
@@ -57,12 +57,12 @@ public class DefaultCaptchaConfig {
         this.randomType = randomType;
     }
 
-    public CaptchaType getType() {
-        return type;
+    public CaptchaType getCaptchaType() {
+        return captchaType;
     }
 
-    public void setType(CaptchaType type) {
-        this.type = type;
+    public void setCaptchaType(CaptchaType captchaType) {
+        this.captchaType = captchaType;
     }
 
     public int getWidth() {

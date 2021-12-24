@@ -14,6 +14,11 @@ import java.awt.image.BufferedImage;
  */
 public interface Producer {
 
+
+    RandomProducer getRandomProducer();
+
+    void setRandomProducer(RandomProducer randomProducer);
+
     /**
      * 创建验证码图片，并生成随机字符
      * @param listener the listener
@@ -32,4 +37,6 @@ public interface Producer {
      * @date: 2021/12/21
      */
      BufferedImage createImage(String text);
+
+     String getRandomStr();
 }
