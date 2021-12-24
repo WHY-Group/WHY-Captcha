@@ -31,5 +31,5 @@ public interface Producer {
      * @author W
      * @date: 2021/12/21
      */
-    BufferedImage createImage(String text);
+     BufferedImage createImage(String text);
 }

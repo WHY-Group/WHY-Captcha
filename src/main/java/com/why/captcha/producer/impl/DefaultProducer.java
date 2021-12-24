@@ -1,10 +1,8 @@
 package com.why.captcha.producer.impl;
 
 import com.why.captcha.configuration.DefaultCaptchaConfig;
-import com.why.captcha.enums.RandomType;
 import com.why.captcha.listener.CreateImageListener;
 import com.why.captcha.producer.Producer;
-import com.why.captcha.producer.RandomProducer;
 import com.why.captcha.utils.RandomResult;
 
 import java.awt.image.BufferedImage;
@@ -18,10 +16,6 @@ import java.awt.image.BufferedImage;
  * @company 上海织田信息技术有限公司 (Oda-Group)
  */
 public class DefaultProducer implements Producer {
-    /**
-     * 创建验证码的配置类
-     */
-    private DefaultCaptchaConfig config;
 
     private DefaultRandomProducer defaultRandomProducer;
 
@@ -52,10 +46,6 @@ public class DefaultProducer implements Producer {
     }
 
 
-    public void setConfig(DefaultCaptchaConfig config) {
-        this.config = config;
-    }
-
     public void setDefaultRandomProducer(DefaultRandomProducer defaultRandomProducer) {
         this.defaultRandomProducer = defaultRandomProducer;
     }
@@ -64,7 +54,7 @@ public class DefaultProducer implements Producer {
         RandomResult randomResult = new RandomResult();
 
         DefaultProducer defaultProducer = new DefaultProducer();
-        defaultProducer.setDefaultRandomProducer(new DefaultRandomProducer(RandomType.MIX_ENGLISH_AND_NUMBERS,new DefaultCaptchaConfig()));
+        defaultProducer.setDefaultRandomProducer(new DefaultRandomProducer(new DefaultCaptchaConfig()));
         defaultProducer.createImage(randomResult::setRandomStr);
 
         System.out.println(randomResult.getRandomStr());

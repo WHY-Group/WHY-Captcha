@@ -4,39 +4,45 @@
   "properties": [
     {
       "sourceType": "com.why.captcha.configuration.CaptchaGlobalConfig",
-      "name": "captcha.global.type",
+      "name": "captcha.config.type",
       "description": "验证码类型",
       "type": "com.why.captcha.enums.CaptchaType"
     },
     {
       "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
-      "name": "captcha.default.width",
+      "name": "captcha.config.width",
       "description": "普通验证码宽度",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
-      "name": "captcha.default.height",
+      "name": "captcha.config.height",
       "description": "普通验证码高度",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
-      "name": "captcha.default.randomLength",
+      "name": "captcha.config.randomLength",
       "description": "普通验证码位数",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
-      "name": "captcha.default.mathCaptchaMaxNumber",
+      "name": "captcha.config.mathCaptchaMaxNumber",
       "description": "数值验证码最大取值",
       "type": "java.lang.Integer"
     },
     {
       "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
-      "name": "captcha.default.mathCaptchaMinNumber",
+      "name": "captcha.config.mathCaptchaMinNumber",
       "description": "数值验证码最小取值",
       "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "name": "captcha.config.randomType",
+      "description": "随机数产生的类型",
+      "type": "com.why.captcha.enums.RandomType"
     }
 
   ]

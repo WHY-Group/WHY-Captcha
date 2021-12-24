@@ -1,5 +1,7 @@
 package com.why.captcha.configuration;
 
+import com.why.captcha.enums.CaptchaType;
+import com.why.captcha.enums.RandomType;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,6 +18,11 @@ import org.springframework.context.annotation.Configuration;
         prefix = "captcha.default"
 )
 public class DefaultCaptchaConfig {
+    /**
+     * 全局配置验证码的类型
+     */
+    private CaptchaType type;
+
     /**
      * 验证码图片宽度
      */
@@ -37,6 +44,26 @@ public class DefaultCaptchaConfig {
      */
     private int mathCaptchaMinNumber = 1;
 
+    /**
+     * 随机类型
+     */
+    private RandomType randomType = RandomType.MIX_ENGLISH_AND_NUMBERS;
+
+    public RandomType getRandomType() {
+        return randomType;
+    }
+
+    public void setRandomType(RandomType randomType) {
+        this.randomType = randomType;
+    }
+
+    public CaptchaType getType() {
+        return type;
+    }
+
+    public void setType(CaptchaType type) {
+        this.type = type;
+    }
 
     public int getWidth() {
         return width;

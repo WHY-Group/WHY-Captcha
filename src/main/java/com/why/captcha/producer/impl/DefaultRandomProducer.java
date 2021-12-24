@@ -15,7 +15,7 @@ import org.springframework.util.StringUtils;
  * @date 2021/12/21
  * @company WHY-Group
  */
-public class DefaultRandomProducer implements RandomProducer {
+public class DefaultRandomProducer extends RandomProducer {
     /**
      * 随机类型
      */
@@ -31,8 +31,8 @@ public class DefaultRandomProducer implements RandomProducer {
     private static final char[] MATH_BASIC_OPERATOR = {'+', '-', '*', '/'};
 
 
-    public DefaultRandomProducer(RandomType randomType, DefaultCaptchaConfig config) {
-        this.randomType = randomType;
+    public DefaultRandomProducer(DefaultCaptchaConfig config) {
+        this.randomType = config.getRandomType();
         this.config = config;
     }
 
@@ -41,13 +41,13 @@ public class DefaultRandomProducer implements RandomProducer {
         RandomResult result = new RandomResult();
         switch (randomType) {
             case NUMBER:
-                result.setResult(RandomStrUtil.randomNumeric(config.getRandomLength()));
+                result.setRandomStr(RandomStrUtil.randomNumeric(config.getRandomLength()));
                 break;
             case ENGLISH_LETTERS:
-                result.setResult(RandomStrUtil.randomAlphabetic(config.getRandomLength()));
+                result.setRandomStr(RandomStrUtil.randomAlphabetic(config.getRandomLength()));
                 break;
             case MIX_ENGLISH_AND_NUMBERS:
-                result.setResult(RandomStrUtil.randomAlphanumeric(config.getRandomLength()));
+                result.setRandomStr(RandomStrUtil.randomAlphanumeric(config.getRandomLength()));
                 break;
             case MATH:
                 this.createMathRandom(result);
@@ -83,8 +83,6 @@ public class DefaultRandomProducer implements RandomProducer {
         if (!StringUtils.hasText(result.getRandomStr())) {
             result.setRandomStr(numerber1 + " " + operator + " " + numerber2 + "=");
         }
-
-        System.out.println(result);
     }
 
     /**

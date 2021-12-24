@@ -1,7 +1,5 @@
 package com.why.captcha.factory;
 
-import com.why.captcha.configuration.CaptchaGlobalConfig;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,10 +12,5 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ProducerFactory {
-    @Autowired
-    private CaptchaGlobalConfig config;
 
-//    public Producer getProducer(){
-//
-//    }
 }
