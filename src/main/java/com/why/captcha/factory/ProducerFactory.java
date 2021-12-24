@@ -17,7 +17,7 @@ import com.why.captcha.producer.RandomProducer;
  */
 public class ProducerFactory {
 
-    public static Producer getProducer(DefaultCaptchaConfig config) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static Producer getProducer(DefaultCaptchaConfig config) throws Exception {
         // 获取随机数生成类和验证码生成类的类型
         RandomType randomType = config.getRandomType();
         CaptchaType captchaType = config.getCaptchaType();

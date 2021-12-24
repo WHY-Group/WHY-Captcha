@@ -4,7 +4,7 @@
   "properties": [
     {
       "sourceType": "com.why.captcha.configuration.CaptchaGlobalConfig",
-      "name": "captcha.config.type",
+      "name": "captcha.config.captchaType",
       "description": "验证码类型",
       "type": "com.why.captcha.enums.CaptchaType"
     },

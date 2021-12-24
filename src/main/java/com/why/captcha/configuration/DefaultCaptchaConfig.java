@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ConfigurationProperties(
-        prefix = "captcha.default"
+        prefix = "captcha.config"
 )
 public class DefaultCaptchaConfig {
     /**
@@ -54,7 +54,11 @@ public class DefaultCaptchaConfig {
     }
 
     public void setRandomType(RandomType randomType) {
-        this.randomType = randomType;
+        if (CaptchaType.MATH.getType().equals(this.captchaType.getType())){
+            this.randomType = RandomType.MATH;
+        }else {
+            this.randomType = randomType;
+        }
     }
 
     public CaptchaType getCaptchaType() {
@@ -63,6 +67,9 @@ public class DefaultCaptchaConfig {
 
     public void setCaptchaType(CaptchaType captchaType) {
         this.captchaType = captchaType;
+        if (CaptchaType.MATH.getType().equals(captchaType.getType())){
+            this.randomType = RandomType.MATH;
+        }
     }
 
     public int getWidth() {
