@@ -1,6 +1,6 @@
 package com.why.captcha.producer.impl;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
+import com.why.captcha.configuration.CaptchaConfig;
 import com.why.captcha.enums.RandomType;
 import com.why.captcha.producer.RandomProducer;
 import com.why.captcha.utils.RandomResult;
@@ -23,7 +23,7 @@ public class DefaultRandomProducer extends RandomProducer {
     /**
      * 普通验证码的配置类
      */
-    private DefaultCaptchaConfig config;
+    private CaptchaConfig config;
 
     /**
      * 数学方法中的加、减、乘、除运算符
@@ -34,7 +34,7 @@ public class DefaultRandomProducer extends RandomProducer {
 
     }
 
-    public DefaultRandomProducer(DefaultCaptchaConfig config) {
+    public DefaultRandomProducer(CaptchaConfig config) {
         this.config = config;
         this.randomType = config.getRandomType();
     }
@@ -62,12 +62,12 @@ public class DefaultRandomProducer extends RandomProducer {
     }
 
     @Override
-    public DefaultCaptchaConfig getCaptchaConfig() {
+    public CaptchaConfig getCaptchaConfig() {
         return this.config;
     }
 
     @Override
-    public void setCaptchaConfig(DefaultCaptchaConfig config) {
+    public void setCaptchaConfig(CaptchaConfig config) {
         this.config = config;
         this.randomType = config.getRandomType();
     }

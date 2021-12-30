@@ -9,40 +9,52 @@
       "type": "com.why.captcha.enums.CaptchaType"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.width",
       "description": "普通验证码宽度",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.height",
       "description": "普通验证码高度",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.randomLength",
       "description": "普通验证码位数",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.mathCaptchaMaxNumber",
       "description": "数值验证码最大取值",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.mathCaptchaMinNumber",
       "description": "数值验证码最小取值",
       "type": "java.lang.Integer"
     },
     {
-      "sourceType": "com.why.captcha.configuration.DefaultCaptchaConfig",
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
       "name": "captcha.config.randomType",
       "description": "随机数产生的类型",
       "type": "com.why.captcha.enums.RandomType"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
+      "name": "captcha.config.fontSize",
+      "description": "验证码字体大小",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.why.captcha.configuration.CaptchaConfig",
+      "name": "captcha.config.fontName",
+      "description": "验证码字体名",
+      "type": "java.lang.String"
     }
 
   ]

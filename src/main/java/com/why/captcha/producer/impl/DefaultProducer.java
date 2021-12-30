@@ -1,6 +1,6 @@
 package com.why.captcha.producer.impl;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
+import com.why.captcha.configuration.CaptchaConfig;
 import com.why.captcha.listener.CreateImageListener;
 import com.why.captcha.producer.Producer;
 import com.why.captcha.producer.RandomProducer;
@@ -49,7 +49,7 @@ public class DefaultProducer implements Producer {
 
 
     private BufferedImage paintingCode(String text){
-        DefaultCaptchaConfig captchaConfig = defaultRandomProducer.getCaptchaConfig();
+        CaptchaConfig captchaConfig = defaultRandomProducer.getCaptchaConfig();
         BufferedImage bufferedImage = new BufferedImage(captchaConfig.getWidth(),captchaConfig.getHeight(),BufferedImage.TYPE_INT_RGB);
 //        Graphics2D graphics = bufferedImage.createGraphics();
 //        graphics.setBackground(Color.WHITE);

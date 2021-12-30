@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(
         prefix = "captcha.config"
 )
-public class DefaultCaptchaConfig {
+public class CaptchaConfig {
     /**
      * 全局配置验证码的类型
      */
@@ -48,6 +48,14 @@ public class DefaultCaptchaConfig {
      * 随机类型
      */
     private RandomType randomType = RandomType.MIX_ENGLISH_AND_NUMBERS;
+    /**
+     * 字体大小
+     */
+    private int fontSize=10;
+    /**
+     * 字体名
+     */
+    private String[] fontName;
 
     public RandomType getRandomType() {
         return randomType;
@@ -110,5 +118,21 @@ public class DefaultCaptchaConfig {
 
     public void setMathCaptchaMinNumber(int mathCaptchaMinNumber) {
         this.mathCaptchaMinNumber = mathCaptchaMinNumber;
+    }
+
+    public int getFontSize() {
+        return fontSize;
+    }
+
+    public void setFontSize(int fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public String[] getFontName() {
+        return fontName;
+    }
+
+    public void setFontName(String[] fontName) {
+        this.fontName = fontName;
     }
 }

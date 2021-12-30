@@ -1,6 +1,6 @@
 package com.why.captcha.factory;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
+import com.why.captcha.configuration.CaptchaConfig;
 import com.why.captcha.constants.GenerateProducerConstant;
 import com.why.captcha.enums.CaptchaType;
 import com.why.captcha.enums.RandomType;
@@ -17,7 +17,7 @@ import com.why.captcha.producer.RandomProducer;
  */
 public class ProducerFactory {
 
-    public static Producer getProducer(DefaultCaptchaConfig config) throws Exception {
+    public static Producer getProducer(CaptchaConfig config) throws Exception {
         // 获取随机数生成类和验证码生成类的类型
         RandomType randomType = config.getRandomType();
         CaptchaType captchaType = config.getCaptchaType();

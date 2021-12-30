@@ -1,6 +1,6 @@
 package com.why.captcha;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
+import com.why.captcha.configuration.CaptchaConfig;
 import com.why.captcha.factory.ProducerFactory;
 import com.why.captcha.producer.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ import java.awt.image.BufferedImage;
 public class TestController {
 
     @Autowired
-    private DefaultCaptchaConfig config;
+    private CaptchaConfig config;
 
     @GetMapping("/ping")
     public void ping(HttpServletResponse response) throws Exception {

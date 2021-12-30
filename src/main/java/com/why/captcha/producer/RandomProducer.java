@@ -1,6 +1,6 @@
 package com.why.captcha.producer;
 
-import com.why.captcha.configuration.DefaultCaptchaConfig;
+import com.why.captcha.configuration.CaptchaConfig;
 import com.why.captcha.utils.RandomResult;
 
 /**
@@ -25,11 +25,11 @@ public abstract class RandomProducer {
     /**
      * 获取验证码配置
      *
-     * @return DefaultCaptchaConfig
+     * @return CaptchaConfig
      * @author W
      * @date: 2021/12/24
      */
-    public abstract DefaultCaptchaConfig getCaptchaConfig();
+    public abstract CaptchaConfig getCaptchaConfig();
 
     /**
      * 设置验证码配置
@@ -38,5 +38,5 @@ public abstract class RandomProducer {
      * @author W
      * @date: 2021/12/24
      */
-    public abstract void setCaptchaConfig(DefaultCaptchaConfig config);
+    public abstract void setCaptchaConfig(CaptchaConfig config);
 }
