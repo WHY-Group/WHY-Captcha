@@ -1,11 +1,13 @@
 package com.why.captcha.producer.impl;
 
 import com.why.captcha.configuration.CaptchaConfig;
+import com.why.captcha.constants.DefaultConfigConstants;
 import com.why.captcha.listener.CreateImageListener;
 import com.why.captcha.producer.Producer;
 import com.why.captcha.producer.RandomProducer;
 import com.why.captcha.utils.RandomResult;
 import com.why.captcha.utils.RandomStrUtil;
+import org.springframework.util.ObjectUtils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -66,7 +68,16 @@ public class DefaultProducer implements Producer {
 
         for (int i = 0; i < length; i++) {
             String strChar = chars[i]+"";
-            Font font = new Font("JetBrains Mono",Font.BOLD,30);
+            // 设置字体
+            String defaultFont = DefaultConfigConstants.DEFAULT_FONT;
+            String[] fontName = captchaConfig.getFontName();
+            // 如果有配置字体则随机取用一个字体画当前值如果没有就使用默认的微软雅黑
+            if (!ObjectUtils.isEmpty(fontName)){
+                int randomFont = RandomStrUtil.nextInt(0, fontName.length - 1);
+                defaultFont = fontName[randomFont];
+            }
+            Font font = new Font(defaultFont,Font.BOLD,captchaConfig.getFontSize());
+
             graphics.setFont(font);
             // 随机生成验证码颜色
             graphics.setColor(new Color(RandomStrUtil.nextInt(0,150), RandomStrUtil.nextInt(0,200), RandomStrUtil.nextInt(0,255)));
